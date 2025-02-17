@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    <link href='https://fonts.googleapis.com/css?family=Anta' rel='stylesheet'>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+    <title>DataView</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <meta charset='UTF-8'>
+      
+      
+    </head>
+<!-- /////////////////This is original///////////////////////////////////////////////////////////////////// -->
+<body>
+
+  <canvas id="myCanvas" 
+          width="680" 
+          height="30" 
+          style="border:2px solid #d3d3d3;
+                border-radius: 10px;">
+  </canvas>
+  <div id="main-content"></div>
+  <div class="mycontainer">
+
+    <divGear>
+      <h1><span id='Gear'>P</span></h1>
+      <p>GEAR</p>
+    </divGear>
+    
+    <divTemp>
+      <div class = "coolant">
+        <h2><span id='water_temp'>100</span>°C</h2>
+      </div>
+      <br> 
+      <div class = "oil">
+        <h2><span id='oil_temp'>100</span>°C</h2>
+      </div>
+      <br>
+      <div class = "gBox">
+        <h2><span id='gearbox_temp'>100</span>°C</h2>
+      </div>
+    </divTemp>
+    
+    <divSpeed>
+      <h3><span id='speed'>100</span></h3>
+      <p>MPH</p>
+    
+   
+      <h4><span id='driveMode'>Sport +</span></h4>
+      
+      <div class = "ethanol">
+       <br>
+      <h5><span id='ethContent'>30</span>%</h5>
+      </div>
+    </divSpeed>
+  
+    
+ <button type=button
+      id="theme-switcher"
+      background-color=none>   
+      <div class="themeSwitch">
+      </div>
+      </button>
+  </div>
+
+
+<button id="settings-button">
+  <div class="settings">
+  </div>
+</button>
+      
+  <div id="settings-container" 
+       style="display: none;">
+  
+       <p><input type="range" 
+          id="shiftlight-rpm" 
+          min="5000" 
+          max="7000" 
+          value="6500"
+          style= "width:310px;
+                  position: fixed;
+                  top: var(--settings-range1);
+                  left: 275px;">    
+
+    
+      <label for="shiftlight-rpm"
+        style= "text-indent:41px;
+                position: fixed;
+                  top: var(--settings-line1);
+                  left: 20px;">
+                    Shiftlight RPM:</label>
+    
+    
+      <label for="shiftlight-rpm"
+        style= "text-indent:41px;
+                position: fixed;
+                  top: var(--settings-line1);
+                  left: 650px;">
+                    RPM</label>
+    
+    
+                    
+      <span id="shiftlight-rpm-value"
+        style="display: inline-block;
+                width: 50px;
+                text-align: left;
+                position: fixed;
+                top: var(--settings-line1);
+                left: 600px;"></span></p>
+     
+
+      <p><input type="range" 
+                id="oil-warning-temp" 
+                min="115" 
+                max="125" 
+                value="115"
+                style= "width:310px;
+                      position: fixed;
+                      top: var(--settings-range2);
+                      left: 275px;">
+        <label for="oil-warning-temp"
+              style= "position: fixed;
+                    top: var(--settings-line2);
+                    left: 20px;">
+                    Oil Warning Temp:</label>
+ 
+        <label for="oil-warning-temp"
+          style= "position: fixed;
+                    top: var(--settings-line2);
+                    left: 650px;">
+                      °C</label>
+   
+        <span id="oil-warning-temp-value"
+          style="display: inline-block;
+                  width: 50px;
+                  text-align: left;
+                  position: fixed;
+                  top: var(--settings-line2);
+                  left: 600px;"></span></p>
+
+
+        <p><input type="range" 
+                  id="oil-danger-temp" 
+                min="125"
+                max="135" 
+              value="125"
+              style= "width:310px;
+                      position: fixed;
+                      top: var(--settings-range3);
+                      left: 275px;">
+        
+        <label for="oil-danger-temp"
+                style= "position: fixed;
+                        top: var(--settings-line3);
+                        left: 650px;">
+                        °C</label>
+        
+        <label for="oil-danger-temp"
+                style= "text-indent:10px;
+                        position: fixed;
+                        top: var(--settings-line3);
+                        left: 20px;">
+                        Oil Danger Temp:</label>
+        <span id="oil-danger-temp-value"
+              style="display: inline-block;
+                      width: 50px;
+                      text-align: left;
+                      position: fixed;
+                      top: var(--settings-line3);
+                      left: 600px;"></span></p>
+
+
+      <p><input  type="range" 
+                   id="shift_reminder" 
+                  min="0"
+                  max="10" 
+                value="5"
+                style= "width:310px;
+                        position: fixed;
+                        top: var(--settings-range4);
+                        left: 275px;">
+
+        <label for="shift_reminder"
+              style= "text-indent:33px;
+                      position: fixed;
+                      top: var(--settings-line4);
+                      left: 20px;">
+                      Shift Reminder:</label>
+
+        <span id="shift_reminder_value"
+          style="display: inline-block;
+                  width: 120px;
+                  text-align: left;
+                  position: fixed;
+                  top: var(--settings-line4);
+                  left: 600px;"></span>
+    
+        <label for="shift_reminder"
+              style= "position: fixed;
+                      top: var(--settings-line4);
+                      left: 630px">
+                      seconds</label></p>
+
+
+      <p><label for="start-up-type"
+        style="position: fixed;
+              top: var(--settings-line5);
+              left: 20px;">
+              Choose Start Type:</label>
+        
+        <select id="start-up-type"
+              style="width:180px;
+                      height:30px;
+                      font-family:var(--font)
+                      font-size: 50px;
+                      position: fixed;
+                      top: var(--settings-line5);
+                      left: 310px;
+                      border-radius:5px;">
+    
+        <option value="start-from-set-mode"
+                style="font-family: var(--font);
+                        font-size:20px;">
+                        Start from Set Mode</option>
+        
+        <option value="start-from-last-mode"
+                style="position: fixed;
+                        top: 250px;
+                        left: 200px;
+                        font-family: var(--font);
+                        font-size:20px;">
+                        Start from Last Mode</option></select></p>
+
+                        
+    <div id="start-up-mode" style="display: none;">
+      <p><label for="start-up-mode-select"
+              style="width:400px;
+                    font-family:var(--font)
+                    font-size: 20px;
+                    position: fixed;
+                    top: var(--settings-line5);
+                    left: 465px;">
+                    Select Start-up Mode:</label>
+        <select id= "start-up-mode-select"
+              style="font-family:var(--font)
+                      font-size: 20px;
+                      height:30px;
+                      position: fixed;
+                      top: var(--settings-line5);
+                      left: 840px;
+                      border-radius:5px;">
+       
+        <option value="ECO"
+            style="font-family: var(--font);
+                font-size:20px;">ECO</option>
+        <option value="Comfort"
+            style="font-family: var(--font);
+                font-size:20px;">Comfort</option>
+        <option value="Sport"
+            style="font-family: var(--font);
+                font-size:20px;">Sport</option>
+        <option value="Sport +"
+            style="font-family: var(--font);
+                font-size:20px;">Sport +</option>
+        <option value="Traction"
+            style="font-family: var(--font);
+                font-size:20px;">Traction</option>
+        <option value="DSC Off"
+            style="font-family: var(--font);
+                font-size:20px;">DSC Off</option>
+      </select></p>
+    </div>
+    <button id="save-button">
+  <div class="settings">
+  </div>
+</button>
+    
+  </body>
+    
+  </html>
+  
+
+

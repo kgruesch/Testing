@@ -1,0 +1,230 @@
+
+          :root {
+          --font: 'Anta';
+          --height:260px;
+          --bg-color: rgba(255, 255, 255, 0.3);
+          --text-color: white;
+          --box-shadow: 3px 3px 6px 8px rgba(0, 0, 0, 0.5);
+          --text-shadow: 4px 4px 6px black, 
+                            8px 8px 25px rgb(0, 77, 128), 
+                            0 0 25px rgb(77, 136, 255);
+          --pText-shadow: 2px 2px 3px black, 
+                          8px 8px 25px rgb(0, 77, 128), 
+                          0 0 25px rgb(77, 136, 255);
+          --dText-shadow: 2px 2px 3px black, 
+                          8px 8px 25px rgb(0, 77, 128), 
+                          0 0 25px rgb(77, 136, 255);
+          --bg-img:url('https://i.imgur.com/YsgAn6Z.png');
+          --oil-img:url("https://i.imgur.com/VUzez5L.png");
+          --coolant-img:url("https://i.imgur.com/csmFl0R.png" );
+          --gBox-img:url("https://i.imgur.com/dx5Y7ZC.png" );
+          --ethPcnt-img: url("https://i.imgur.com/axBUY3Y.png");
+          --darkMode-img:url("https://i.imgur.com/IhvnZ9s.png");
+          --settings-img:url("https://i.imgur.com/Xc9tRk2.png");
+          --settings-line1:20px;
+          --settings-range1: 28px;
+          --settings-line2:65px;
+          --settings-range2: 73px;
+          --settings-line3:110px;
+          --settings-range3: 118px;
+          --settings-line4:155px;
+          --settings-range4: 163px;
+          --settings-line5:200px;
+          
+          }
+
+          :root.dark-theme {
+          --font: 'Anta';
+          --height:260px;
+          --bg-color: rgba(212, 118, 47, 0.6);
+          --text-color: black;
+          --box-shadow: 3px 3px 6px 8px rgba(0, 0, 0, 0.5);
+          --text-shadow: 4px 4px 6px white, 
+                            8px 8px 25px rgb(250, 97, 20), 
+                            0 0 25px rgb(230, 138, 25);
+          --pText-shadow: 2px 2px 3px white, 
+                            6px 6px 20px rgb(250, 97, 20), 
+                            0 0 25px rgb(230, 138, 25);
+          --dText-shadow: 4px 4px 4px black, 
+                            6px 6px 20px rgb(250, 97, 20), 
+                            0 0 25px rgb(230, 138, 25);
+          --bg-img: url('https://i.imgur.com/nwojhVS.png');
+          --oil-img: url("https://i.imgur.com/iaRHFEu.png"); 
+          --coolant-img:url("https://i.imgur.com/hs2mwzK.png");
+          --gBox-img:url("https://i.imgur.com/Ay0JHzJ.png");
+          --ethPcnt-img: url("https://i.imgur.com/qebbgHQ.png");
+          --darkMode-img:url("https://i.imgur.com/LhyFibB.png");
+          --settings-img:url("https://i.imgur.com/s6tmOXH.png");
+          --settings-line1:20px;
+          --settings-range1: 28px;
+          --settings-line2:65px;
+          --settings-range2: 73px;
+          --settings-line3:110px;
+          --settings-range3: 118px;
+          --settings-line4:155px;
+          --settings-range4: 163px;
+          --settings-line5:200px;
+          }
+          
+          *{transition-property: color, 
+          						           background, 
+                                 background-color, 
+                                 box-shadow, 
+                                 text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;}
+ 
+        .coolant{
+          background: var(--coolant-img) no-repeat left;
+          background-size: 50px 50px;
+          height: 85px;
+          position:fixed;
+          top: 60px;
+  		  left: 228px;
+
+          }
+        
+        .oil{
+          background:var(--oil-img) no-repeat left;
+          background-size: 60px 50px;
+          height: 80px;
+          position:fixed;
+          top: 140px;
+  		  left: 228px;
+          }
+          
+        .gBox{
+          background:var(--gBox-img) no-repeat left;
+          background-size: 50px 50px;
+          height: 80px;
+          position:fixed;
+          top: 220px;
+  		  left: 230px;
+          }
+          
+        .ethanol{
+          background:var(--ethPcnt-img) no-repeat left;
+          background-size: 55px 60px;
+          height: 85px;
+          position:fixed;
+          top: 225px;
+  		  left: 510px;
+          }
+          
+        .themeSwitch{
+          background:var(--darkMode-img) no-repeat center;
+          background-size: 67px 60px;
+          height: 70px;
+          width: 70px;
+		      position:fixed;
+          top: 340px;
+  		    left: 20px;
+          }
+          
+         .settings{
+          background:var(--settings-img) no-repeat center;
+          background-size: 67px 60px;
+          height: 70px;
+          width: 70px;
+		      position:fixed;
+          top: 340px;
+  		    left: 95px;
+          }
+          
+        div.mycontainer divGear {
+          width:160px;
+          background-color:var(--bg-color);
+          box-shadow:var(--box-shadow);
+          height:var(--height);
+          position:fixed;
+          top: 55px;
+  		  left: 20px;
+          padding-left:8px;
+          padding-right:8px;
+          border-radius: 10px;}
+
+        div.mycontainer divTemp {
+          width:245px;
+          background-color:var(--bg-color);
+          box-shadow:var(--box-shadow);
+          height:var(--height);
+          position:fixed;
+          top: 55px;
+  		    left: 220px;
+          padding-left:8px;
+          padding-right:8px;
+          border-radius: 10px;}
+          
+        div.mycontainer divSpeed {
+          width:175px;
+          background-color:var(--bg-color);
+          box-shadow:var(--box-shadow);
+          height:var(--height);
+          position:fixed;
+          top: 55px;
+  		  left: 505px;
+          border-radius: 10px;}
+      
+        h1 {font-family: var(--font);
+            font-size:200px;
+            color:var(--text-color);
+            text-shadow:var(--text-shadow);
+            text-align:center;
+            margin: 0;
+            padding-top: 8px;
+            line-height: 1;}
+
+        h2 {font-family: var(--font);
+            font-size:60px;
+            text-indent:65px;
+            color:var(--text-color);
+            text-shadow:var(--text-shadow);
+            margin-top: -15px;
+            padding-top:25px;
+            line-height: 1;}
+            
+        h3 {font-family: var(--font);
+            font-size: 65px;
+            color:var(--text-color);
+            text-shadow:var(--text-shadow);
+            text-align:center;
+            margin: 0;
+            padding-top: 10px;
+            line-height: 1;}
+
+        h4 {font-family: var(--font);
+            font-size: 40px;
+            color:var(--text-color);
+            text-shadow:var(--dText-shadow);
+            text-align:center;
+            margin: 0;
+            padding-top: 10px;
+            line-height: 1;}
+
+        p  {font-family: var(--font);
+        	font-size: 30px;
+            text-align:center;
+            color: var(--text-color);
+            text-shadow:var(--pText-shadow);
+            margin: 0;
+            padding: 5;
+            line-height: 1;}
+            
+        h5 {font-family: var(--font);
+        	font-size: 40px;
+            text-indent:55px;
+            color: var(--text-color);
+            text-shadow:var(--text-shadow);
+           margin-top: 5px;
+            padding:0;
+            line-height: 1;}
+     
+        body {background-image: var(--bg-img);
+              background-repeat: no-repeat;}
+
+        .hide-all * {
+            display: none;}
+
+        .hide-all #settings-container {
+            display: block;}
+        
